@@ -47,4 +47,10 @@ mysql> SELECT COUNT(*) FROM types;
 |       18 |
 +----------+
 
-
+# How many pokemon have a secondary type?
+mysql> SELECT COUNT(secondary_type) FROM pokemons;
++-----------------------+
+| COUNT(secondary_type) |
++-----------------------+
+|                   316 |
++-----------------------+
