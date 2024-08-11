@@ -23,3 +23,13 @@ mysql> SELECT * FROM types;
 | 18 | Flying   |
 +----+----------+
 
+# What is the name of the pokemon with id 45?
+mysql> SELECT name FROM pokemons WHERE id = 45;
++-------+
+| name  |
++-------+
+| Eevee |
++-------+
+
+
+
