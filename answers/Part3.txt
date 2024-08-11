@@ -686,3 +686,15 @@ mysql> SELECT pt.trainerID, t.trainername, p.name
 |       303 | Ace Duo Elina & Sean | Vileplume |
 +-----------+----------------------+-----------+
 
+# How many pokemon have a secondary type Poison
+mysql> SELECT COUNT(*)
+    -> FROM pokemons p
+    ->          JOIN types t
+    ->               ON p.secondary_type = t.id
+    -> WHERE t.name = 'Poison';
++----------+
+| COUNT(*) |
++----------+
+|       31 |
++----------+
+
