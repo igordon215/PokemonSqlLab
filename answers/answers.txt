@@ -39,5 +39,12 @@ mysql> SELECT COUNT(*) FROM pokemons;
 |      656 |
 +----------+
 
+# How many types are there?
+mysql> SELECT COUNT(*) FROM types;
++----------+
+| COUNT(*) |
++----------+
+|       18 |
++----------+
 
 
