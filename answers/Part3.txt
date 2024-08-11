@@ -670,3 +670,19 @@ mysql> SELECT p.name, t.name FROM pokemons p JOIN types t ON p.secondary_type = 
 +---------+--------+
 | Rufflet | Flying |
 +---------+--------+
+
+# What are the names of the pokemon that belong to the trainer with trainerID 303?
+mysql> SELECT pt.trainerID, t.trainername, p.name
+    -> FROM pokemon_trainer pt
+    ->          JOIN trainers t
+    ->               ON pt.trainerID = t.trainerID
+    ->          JOIN pokemons p
+    ->               ON pt.pokemon_id = p.id
+    -> WHERE pt.trainerID = 303;
++-----------+----------------------+-----------+
+| trainerID | trainername          | name      |
++-----------+----------------------+-----------+
+|       303 | Ace Duo Elina & Sean | Wailord   |
+|       303 | Ace Duo Elina & Sean | Vileplume |
++-----------+----------------------+-----------+
+
