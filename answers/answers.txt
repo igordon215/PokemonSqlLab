@@ -31,5 +31,13 @@ mysql> SELECT name FROM pokemons WHERE id = 45;
 | Eevee |
 +-------+
 
+# How many pokemon are there?
+mysql> SELECT COUNT(*) FROM pokemons;
++----------+
+| COUNT(*) |
++----------+
+|      656 |
++----------+
+
 
 
