@@ -734,3 +734,27 @@ mysql> SELECT COUNT(pokelevel) numberOfLevel100s
     -> GROUP BY trainerID;
 194 rows in set
 
+# How many pokemon only belong to one trainer and no other?
+mysql> SELECT COUNT(pt.pokemon_id), p.name
+    -> FROM pokemon_trainer pt
+    -> JOIN pokemons p
+    -> ON pt.pokemon_id = p.id
+    -> GROUP BY pt.pokemon_id
+    -> HAVING COUNT(pt.pokemon_id) = 1;
++----------------------+------------+
+| COUNT(pt.pokemon_id) | name       |
++----------------------+------------+
+|                    1 | Clawitzer  |
+|                    1 | Barbaracle |
+|                    1 | Tynamo     |
+|                    1 | Rufflet    |
+|                    1 | Lugia      |
+|                    1 | Binacle    |
+|                    1 | Malamar    |
+|                    1 | Zekrom     |
+|                    1 | Reshiram   |
+|                    1 | Happiny    |
+|                    1 | Zweilous   |
+|                    1 | Swirlix    |
+|                    1 | Spewpa     |
++----------------------+------------+
